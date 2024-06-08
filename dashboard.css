@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    display:grid;
+    grid-template-columns: 20vw 80vw;
+    grid-template-rows:  20vh, 100vh- 20vh;
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    --background-blue--: rgb(3,165,252);
+    --mutedgray--: rgba(226,232,240,255);
+
+}
+/*
+.container{
+    border: 2px solid black;
+}*/
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh; /* Full height of the viewport */
+    /*grid-area: 1/1/3/2;/*/
+    background-color: var(--background-blue--);
+    color:white;
+    font-weight: 700;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    border-right:3px black solid;
+}
+
+.logo{
+    grid-row:1/2;
+    font-size:larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list{
+    grid-row:2/3;
+    grid-template-rows:repeat(10,1fr);
+    font-size: large;
+    display: grid;
+}
+
+.list_item{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow-x:hidden;
+}
+
+.list_item_name{
+    grid-column:2/4;
+    display:flex;
+    align-items: center;
+}
+
+.header{
+    grid-area: 1/2/2/3;
+    /*min-height:calc(2fr+40px);*/
+    color: black;
+    background-color: white;
+    display: grid;
+    /*grid-template-rows: 40px calc(100vh-40px); /*THIS IS THE MOST IMPORTANT LINE FO CODE: use absolute values and not fr for things 
+    that you don't want to change the size of when you resize the window*/
+    border-bottom: 3px var(--mutedgray--)solid;
+}
+
+.header_top{
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.search{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center; /*can use align-items and justify-content in grid too*/
+}
+
+#search_icon{
+    grid-column: 1/2;
+    text-align: right;
+}
+
+#search_box{
+    grid-column:2/3;
+}
+
+.profile{
+    padding: 10px;
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.profile_icon{
+    border: 1px pink solid;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile_icon_1{
+    grid-column:1/2;
+}
+
+#profile_name{
+    grid-column:2/3;
+    display: flex;
+    align-items: center;
+}
+
+.header_bottom{
+    padding: 10px;
+    min-height: 50px;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: 3.5fr 1.5fr;
+}
+
+.greeting{
+    grid-column:1/2;
+    display:grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+#profile_icon_2{
+    grid-column:1/2;
+}
+#greeting_text{
+    grid-column:2/3;
+    display: flex;
+    align-items: center;
+    padding:10px;
+}
+
+.button_container{
+    grid-column:2/3;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    background-color: var(--background-blue--);
+    color:white;
+    border:none;
+    text-align: center;
+    border-radius:32px;
+    display:inline-block;
+    height: 30px;
+    width:80px;
+}
+
+
+.page{
+    grid-area:2/2/3/3;
+    height:85vh;
+    overflow-y: auto;
+    display: grid;
+    padding:10px;
+    grid-template-rows:1fr 9fr;
+    background-color: var(--mutedgray--);
+}
+
+.page_header{
+    display: grid;
+    grid-row:1/2;
+    grid-template-columns:3.5fr 1.5fr;
+    padding:10px;
+    align-items:center;
+}
+
+.project_announcement_container{
+    grid-row:2/3;
+    /*padding:5px;*/
+    display: grid;
+    grid-template-columns: 3.5fr 1.5fr;
+}
+
+.project_container{
+    padding:10px;
+    grid-column:1/2;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto; /*JUST USE AUTO FOR SHIT THAT NEEDS RESIZING!*/
+    grid-gap:10px 10px;
+    
+}
+
+.card{
+    max-height: 25vh;
+    overflow-y:hidden;
+    /*
+    min-height:auto;
+    min-width: 100px;*/ /*just leave it up it to auto!*/
+    padding:5px;
+    border: 1px black solid;
+    display: grid;
+    grid-template-rows: 2fr 6fr;
+    border-radius: 10px;
+}
+
+.card_title{
+    grid-row:1/2;
+    margin:5px;
+    font-weight:300;
+    font-size:medium;
+}
+
+.card_text{
+    grid-row:2/3;
+    margin:5px;
+    font-size:small
+}
+
+.announcement_container{
+    padding:5px;
+    grid-column:2/3;
+    display:grid;
+    border:1px black solid;
+    border-radius: 10px;;
+    
+}
